@@ -32,7 +32,7 @@ Este projeto é um exemplo simples de como coletar dados de um site que não ofe
 
 - **Alteração na Estrutura**: O código assume que o site usa a classe `feed-post-link` para os links das notícias, mas isso pode mudar dependendo da estrutura do HTML. Você pode inspecionar o código da página para verificar as classes corretas.
   
-- **Conteúdo Dinâmico**: Alguns sites, como o da Globo, carregam conteúdo dinamicamente usando **JavaScript**. Isso pode impedir que o BeautifulSoup extraia dados corretamente, pois ele apenas lê o HTML estático da página. Se esse for o caso, você pode precisar de uma ferramenta como **Selenium** para lidar com JavaScript.
+- **Conteúdo Dinâmico**: Alguns sites, carregam conteúdo dinamicamente usando **JavaScript**. Isso pode impedir que o BeautifulSoup extraia dados corretamente, pois ele apenas lê o HTML estático da página. Se esse for o caso, você pode precisar de uma ferramenta como **Selenium** para lidar com JavaScript.
 
 - **Paginação**: Esse código captura as notícias da página inicial, mas o site pode ter várias páginas de notícias. Para lidar com isso, você precisaria adicionar lógica de paginação ao código.
 
