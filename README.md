@@ -1,43 +1,67 @@
-# Projeto de Web Scraping: Coleta de Dados de Sites
+Projeto de Web Scraping: Coleta de Dados de Sites com Interface Gráfica
+Este projeto demonstra como realizar a coleta de dados de um site utilizando Web Scraping com uma interface gráfica criada em Tkinter. O objetivo é extrair os textos de links disponíveis em uma página da web e armazená-los em um arquivo CSV de forma organizada. Utiliza as bibliotecas BeautifulSoup para o parsing do HTML, requests para requisições e pandas para manipulação e armazenamento dos dados.
 
-Este projeto demonstra como realizar a coleta de dados de um site utilizando **Web Scraping**. O objetivo é extrair informações estruturadas de uma página da web e armazená-las em um formato organizado (arquivo CSV). O projeto utiliza as bibliotecas **BeautifulSoup** para fazer o parsing do HTML e **requests** para realizar a requisição da página.
-
-## Descrição
-
+Descrição
 O projeto realiza os seguintes passos:
 
-1. **Coleta de Dados**: A página HTML de um site é carregada usando a biblioteca **requests**.
-   
-2. **Análise do Conteúdo HTML**: Utilizamos **BeautifulSoup** para fazer o parsing da página e extrair os dados desejados.
+Entrada de URL: O usuário insere a URL desejada através de uma interface gráfica.
 
-3. **Armazenamento dos Dados**: Os dados extraídos são salvos em um arquivo CSV, usando **pandas** para uma melhor organização.
+Coleta de Dados: O programa realiza uma requisição HTTP para obter o HTML do site.
 
-Este projeto é um exemplo simples de como coletar dados de um site que não oferece uma API, utilizando o método de web scraping.
+Extração de Links: Utilizamos BeautifulSoup para extrair os textos de todos os links disponíveis na página.
 
-## Tecnologias Usadas
+Armazenamento dos Dados: Os textos extraídos são organizados em um arquivo CSV chamado dados_extraidos.csv.
 
-- **Python**: Linguagem de programação utilizada para implementar a lógica do web scraping.
-- **Requests**: Biblioteca para realizar requisições HTTP e obter o conteúdo das páginas.
-- **BeautifulSoup**: Biblioteca para fazer o parsing do conteúdo HTML e extrair dados.
-- **Pandas**: Biblioteca para armazenar os dados extraídos em um arquivo CSV de forma estruturada.
+Este projeto é um exemplo simples e didático de como coletar dados de sites que não oferecem uma API, utilizando o método de web scraping.
 
-## Funcionalidades
+Tecnologias Usadas
+Python: Linguagem de programação utilizada para implementar a lógica do web scraping.
+Tkinter: Biblioteca para criação da interface gráfica.
+Requests: Biblioteca para realizar requisições HTTP e obter o conteúdo das páginas.
+BeautifulSoup: Biblioteca para fazer o parsing do conteúdo HTML e extrair dados.
+Pandas: Biblioteca para salvar os dados extraídos em um arquivo CSV.
+Funcionalidades
+Interface gráfica para facilitar o uso por iniciantes.
+Coleta textos de links de um site qualquer.
+Trata exceções como falhas nas requisições ou ausência de links na página.
+Salva os textos extraídos em um arquivo CSV para uso posterior.
+Observações Importantes
+Estrutura do Site: Este projeto busca links genéricos no HTML da página. Ele pode não funcionar corretamente caso o site utilize estruturas específicas ou carregue conteúdo dinamicamente.
 
-- Coleta dados de um site qualquer.
-- Trata exceções, como falhas nas requisições ou ausência de elementos na página.
-- Salva os dados extraídos em um arquivo CSV para uso posterior.
-- Código simples e fácil de entender, ideal para iniciantes em web scraping.
+Conteúdo Dinâmico: Alguns sites, como aqueles que utilizam JavaScript para carregar dados, podem exigir ferramentas como Selenium para extração adequada.
 
-## Observações Importantes
+Exemplo de Teste: Um bom site para testar o código é o Globo.com, que possui várias seções com links estáticos no HTML.
 
-- **Alteração na Estrutura**: O código assume que o site usa a classe `feed-post-link` para os links dos itens a serem extraídos, mas isso pode mudar dependendo da estrutura do HTML. Você pode inspecionar o código da página para verificar as classes corretas.
-  
-- **Conteúdo Dinâmico**: Alguns sites carregam conteúdo dinamicamente usando **JavaScript**, o que pode impedir que o BeautifulSoup extraia dados corretamente, pois ele apenas lê o HTML estático da página. Se esse for o caso, você pode precisar de uma ferramenta como **Selenium** para lidar com JavaScript.
+Como Rodar o Projeto
+Clone este repositório:
 
-- **Paginação**: Esse código captura dados da página inicial, mas o site pode ter várias páginas de conteúdo. Para lidar com isso, você precisaria adicionar lógica de paginação ao código.
+bash
+Copiar código
+git clone https://github.com/seu-usuario/web-scraping-project.git
+cd web-scraping-project
+Instale as dependências: Certifique-se de ter Python instalado. Execute:
 
-## Como Rodar o Projeto
+bash
+Copiar código
+pip install requests beautifulsoup4 pandas
+Execute o programa:
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/web-scraping-project.git
+bash
+Copiar código
+python seu_script.py
+Cole a URL do site: Insira a URL desejada na interface gráfica e clique em "Iniciar Scraping".
+
+Resultados:
+
+Os textos dos links serão extraídos e salvos no arquivo dados_extraidos.csv.
+Estrutura do Arquivo CSV
+O arquivo dados_extraidos.csv conterá uma única coluna chamada Texto, com os textos dos links extraídos da página.
+
+Texto
+Link 1: Texto aqui
+Link 2: Texto aqui
+...
+Melhorias Futuras
+Adicionar suporte a sites dinâmicos usando Selenium.
+Permitir a escolha do nome e local do arquivo CSV.
+Implementar suporte para paginação em sites com múltiplas páginas de conteúdo.
